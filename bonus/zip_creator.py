@@ -6,7 +6,8 @@ def make_archive(filepaths, dest_dir):
     with zipfile.ZipFile(dest_path, "w") as archive:
         for filepath in filepaths:
             filepath = pathlib.Path(filepath)
-            archive.write(filepath, archname=filepath.name)
+            arcname = filepath.name
+            archive.write(filepath, arcname=arcname)
 
 if __name__ == "__main__":
-    make_archive(filepaths=["bonus1.py", "bonus2.1.py"], dest_dir="")
+    make_archive(filepaths=["bonus1.py", "bonus2.2.py"], dest_dir="")
